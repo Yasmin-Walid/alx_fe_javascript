@@ -21,6 +21,9 @@ function showRandomQuote (){
 
   //quote and quote category]
   document.getElementById('quoteDisplay').appendChild(elementCreation);
+  
+  document.getElementById('showQuoteButton').addEventListener('click', showRandomQuote);
+
 
 };
 
