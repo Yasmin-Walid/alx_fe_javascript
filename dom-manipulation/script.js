@@ -16,7 +16,8 @@ function showRandomQuote (){
 
   const elementCreation = document.createElement('p');
 
-  elementCreation.innerText = `${selectedQuote.text} - ${selectedQuote.category}`;
+  elementCreation.innerHTML = `${selectedQuote.quote} - <strong>${selectedQuote.quoteCategory}</strong>`;
+
 
   //quote and quote category]
   document.getElementById('quoteDisplay').appendChild(elementCreation);
