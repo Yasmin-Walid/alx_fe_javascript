@@ -1,11 +1,11 @@
 const quotes = [
   {
-  'quote': 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-  'quoteCategory':'Motivational Quotes'
+  'text': 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
+  'category':'Motivational Quotes'
 },
 {
-  'quote': 'Truly great friends are hard to find, difficult to leave, and impossible to forget.',
- 'quoteCategory':'Friendship quotes'
+  'text': 'Truly great friends are hard to find, difficult to leave, and impossible to forget.',
+ 'category':'Friendship quotes'
 }
 ];
 
@@ -16,7 +16,7 @@ function showRandomQuote (){
 
   const elementCreation = document.createElement('p');
 
-  elementCreation.innerText = `${selectedQuote.quote} - ${selectedQuote.quoteCategory}`;
+  elementCreation.innerText = `${selectedQuote.text} - ${selectedQuote.category}`;
 
   //quote and quote category]
   document.getElementById('quoteDisplay').appendChild(elementCreation);
@@ -48,7 +48,7 @@ function displayNewQuote(quoteObject){
 const quoteElement  = document.createElement ('p');
 const quoteDisplayDiv = document.getElementById('newQuoteDisplay');
 
-quoteElement.innerText = `${quoteObject.quote} - ${quoteObject.quoteCategory}`;
+quoteElement.innerText = `${quoteObject.text} - ${quoteObject.category}`;
 
 quoteDisplayDiv.appendChild(quoteElement);
 }
