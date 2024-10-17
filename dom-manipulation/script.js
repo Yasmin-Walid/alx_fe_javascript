@@ -16,7 +16,7 @@ function showRandomQuote (){
 
   const elementCreation = document.createElement('p');
 
-  elementCreation.innerHTML = `${selectedQuote.quote} - <strong>${selectedQuote.quoteCategory}</strong>`;
+  elementCreation.innerHTML = `${selectedQuote.text} - <strong>${selectedQuote.category}</strong>`;
 
 
   //quote and quote category]
@@ -39,8 +39,8 @@ function createAddQuoteForm (){
   }
 
 const newQuoteObject = {
-  'quote': newQuote,
-  'quoteCategory': newQuoteCategory
+  'text': newQuote,
+  'category': newQuoteCategory
 };
   quotes.push(newQuoteObject);
   displayNewQuote(newQuoteObject)
