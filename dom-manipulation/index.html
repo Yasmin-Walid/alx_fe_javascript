@@ -3,23 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Quote Generator</title>
+  <title>Quotes Manager</title>
 </head>
 <body>
-  <h1>Dynamic Quote Generator</h1>
-  
+  <h1>Quotes Manager</h1>
 
-  <div>
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button onclick="createAddQuoteForm ()">Add Quote</button>
-    <div id="newQuoteDisplay"></div>
-  </div>
-
-
-
-  <button onclick ="showRandomQuote ()" id="newQuote">Show New Quote</button>
+  <!-- Section for displaying random quotes -->
   <div id="quoteDisplay"></div>
-  <script src="script.js"></script>
+  <button id="showQuoteButton">Show Random Quote</button>
+
+  <!-- Section for adding a new quote -->
+  <h2>Add a New Quote</h2>
+  <input type="text" id="newQuoteText" placeholder="Enter your quote" />
+  <input type="text" id="newQuoteCategory" placeholder="Enter category" />
+  <button id="addQuoteButton">Add Quote</button>
+
+  <!-- Section for displaying added quotes -->
+  <h2>All Quotes</h2>
+  <div id="newQuoteDisplay"></div>
+
+  <!-- JSON Import/Export -->
+  <h2>Import/Export Quotes</h2>
+  <button id="exportButton">Export Quotes</button>
+  <input type="file" id="importFile" accept=".json" />
+
+  <!-- Category Filter -->
+  <h2>Filter by Category</h2>
+  <select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+  </select>
+
+  <!-- Server Sync Simulation -->
+  <button id="syncButton">Sync with Server</button>
+
+  <script src="quotes.js"></script>
 </body>
 </html>
