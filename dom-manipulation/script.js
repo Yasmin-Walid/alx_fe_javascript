@@ -61,18 +61,12 @@ function displayNewQuote(quoteObject) {
 document.getElementById('addQuoteButton').addEventListener('click', createAddQuoteForm);
 
 // Step 3: Populate Categories
-function populateCategories() {
-  const categoryFilter = document.getElementById('categoryFilter');
-  categoryFilter.innerHTML = '<option value="all">All Categories</option>'; // Reset dropdown
+function displayNewQuote(quoteObject) {
+  const quoteElement = document.createElement('p');
+  const quoteDisplayDiv = document.getElementById('newQuoteDisplay');
 
-  const categories = [...new Set(quotes.map(quote => quote.category))]; // Extract unique categories
-  
-  categories.forEach(category => {
-    const option = document.createElement('option');
-    option.value = category;
-    option.innerText = category;
-    categoryFilter.appendChild(option);
-  });
+  quoteElement.textContent = `${quoteObject.text} - ${quoteObject.category}`; // Use textContent
+  quoteDisplayDiv.appendChild(quoteElement);
 }
 
 // Step 4: Filter Quotes by Category
