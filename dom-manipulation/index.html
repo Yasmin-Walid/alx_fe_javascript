@@ -3,39 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quotes Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Dynamic Quote Generator</title>
 </head>
 <body>
-  <h1>Quotes Manager</h1>
+  <div class="container">
+    <h1>Dynamic Quote Generator</h1>
+    <div id="quoteDisplay"></div>
 
-  <!-- Section for displaying random quotes -->
-  <div id="quoteDisplay"></div>
-  <button id="showQuoteButton">Show Random Quote</button>
+    <select id="categoryFilter" >
+      <option value="all">All Categories</option>
+      <!-- Dynamically populated categories onchange="filterQuotes()"-->
+    </select>
 
-  <!-- Section for adding a new quote -->
-  <h2>Add a New Quote</h2>
-  <input type="text" id="newQuoteText" placeholder="Enter your quote" />
-  <input type="text" id="newQuoteCategory" placeholder="Enter category" />
-  <button id="addQuoteButton">Add Quote</button>
+    <button id="newQuote">Show New Quote</button>
 
-  <!-- Section for displaying added quotes -->
-  <h2>All Quotes</h2>
-  <div id="newQuoteDisplay"></div>
+    <div>
+      <label for="newQuoteText">New Quote:</label>
+      <input id="newQuoteText" type="text" placeholder="Enter a new quote"/><br><br>
+      <label for="newQuoteCategory">Quote Category:</label>
+      <input id="newQuoteCategory" type="text" placeholder="Enter quote category"/><br>
+      <button id="addQuote">Add Quote</button>
+    </div>
+    <button click="exportToJsonFile()" id="exportQuote">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
 
-  <!-- JSON Import/Export -->
-  <h2>Import/Export Quotes</h2>
-  <button id="exportButton">Export Quotes</button>
-  <input type="file" id="importFile" accept=".json" />
+    
+  </div>
 
-  <!-- Category Filter -->
-  <h2>Filter by Category</h2>
-  <select id="categoryFilter" onchange="filterQuotes()">
-    <option value="all">All Categories</option>
-  </select>
-
-  <!-- Server Sync Simulation -->
-  <button id="syncButton">Sync with Server</button>
-
-  <script src="quotes.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
